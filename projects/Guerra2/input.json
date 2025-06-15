@@ -1,0 +1,9 @@
+{
+  "taskType": "TEXT_IMAGE",
+  "textToImageParams": {
+    "text": "a futuristic city with flying cars"
+  },
+  "imageGenerationConfig": {
+    "numberOfImages": 1
+  }
+}

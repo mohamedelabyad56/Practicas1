@@ -1,0 +1,19 @@
+{
+    "AWS_ACCESS_KEY_ID": "AKIAXV4NFPV3IYOIPUVF",
+    "AWS_SECRET_ACCESS_KEY": "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",
+    "AWS_REGION_NAME": "us-east-1",
+
+    "VOICE_PROVIDER": "polly",
+    "POLLY_VOICE_ID": "Lucia",
+
+    "IMAGE_SOURCE": "titan",
+    
+    "TITAN_MODEL_ID": "amazon.titan-image-generator-v1",
+
+    "NUM_IMAGES": 12,
+    "YOUTUBE_TITLE": "La Segunda Guerra Mundial: El Cataclismo Humano",
+    "YOUTUBE_DESCRIPTION": "Una narración profunda sobre la Segunda Guerra Mundial, generada automáticamente con Python.",
+    "YOUTUBE_TAGS": ["historia", "segunda guerra mundial", "documental", "python"],
+    "YOUTUBE_CATEGORY": "28",
+    "YOUTUBE_PRIVACY": "private"
+}

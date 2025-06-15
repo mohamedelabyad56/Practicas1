@@ -1,0 +1,18 @@
+{
+    "AWS_ACCESS_KEY_ID": "AKIAXV4NFPV3IYOIPUVF",
+    "AWS_SECRET_ACCESS_KEY": "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",
+    "AWS_REGION_NAME": "us-east-1",
+
+    "VOICE_PROVIDER": "polly",
+    "POLLY_VOICE_ID": "Lucia",
+
+    "IMAGE_SOURCE": "titan",
+    "TITAN_MODEL_ID": "amazon.titan-image-generator-v1",
+
+    "NUM_IMAGES": 10,
+    "YOUTUBE_TITLE": "Video generado con AWS Polly y Titan",
+    "YOUTUBE_DESCRIPTION": "Este video fue generado automáticamente usando Python y los servicios de IA de Amazon Web Services.",
+    "YOUTUBE_TAGS": ["aws", "polly", "titan", "ia", "python"],
+    "YOUTUBE_CATEGORY": "28",
+    "YOUTUBE_PRIVACY": "private"
+}
