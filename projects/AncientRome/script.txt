@@ -1,0 +1,29 @@
+--- CHUNK SPLIT FOR POLLY ---
+Narrador: Bienvenidos a un viaje en el tiempo hacia una de las civilizaciones más fascinantes de la historia: la Antigua Roma. Desde sus humildes comienzos como un pequeño pueblo a orillas del río Tíber hasta convertirse en un imperio que dominó el mundo conocido, Roma dejó un legado que aún resuena en nuestra cultura, leyes y arquitectura. Hoy exploraremos su historia, sus logros y su caída.
+
+La leyenda cuenta que Roma fue fundada en el año 753 antes de Cristo por Rómulo y Remo, dos hermanos criados por una loba. Rómulo, tras matar a su hermano, se convirtió en el primer rey de Roma. Aunque esta historia es un mito, los arqueólogos han encontrado restos de aldeas en las siete colinas de Roma que datan de esa época. Durante sus primeros siglos, Roma fue gobernada por reyes, pero en el año 509 antes de Cristo, los romanos derrocaron a su último rey, Tarquinio el Soberbio, y establecieron la República.
+
+--- CHUNK SPLIT FOR POLLY ---
+En la República, Roma se transformó en una sociedad gobernada por el Senado y los cónsules, elegidos por los ciudadanos. Este sistema, aunque imperfecto, permitió a Roma expandirse por Italia. Las guerras púnicas contra Cartago, entre los siglos III y II antes de Cristo, marcaron un punto de inflexión. Roma derrotó a su rival en el Mediterráneo, ganando territorios en Sicilia, Cerdeña y el norte de África. Pero la expansión trajo tensiones internas. Los generales, como Julio César, ganaron enorme poder, y las desigualdades entre ricos y pobres alimentaron conflictos civiles.
+
+Julio César, un brillante estratega, conquistó la Galia y se convirtió en una figura casi divina. Sin embargo, su ambición lo llevó a cruzar el río Rubicón con su ejército en el año 49 antes de Cristo, desatando una guerra civil. César venció, pero fue asesinado en el Senado en el año 44 antes de Cristo. Su muerte marcó el fin de la República y el inicio del Imperio.
+
+--- CHUNK SPLIT FOR POLLY ---
+Tras el caos, Octavio, sobrino adoptivo de César, emergió como el primer emperador de Roma en el año 27 antes de Cristo, tomando el nombre de Augusto. Bajo su reinado, Roma vivió la Pax Romana, un período de paz y prosperidad que duró dos siglos. El Imperio se extendió desde Britania hasta Egipto, uniendo pueblos diversos bajo un solo gobierno. Las ciudades romanas florecieron con foros, teatros y baños públicos. Las legiones, con su disciplina y organización, mantenían las fronteras seguras.
+
+La vida en Roma era vibrante pero desigual. Los ricos vivían en lujosas villas, mientras los pobres se hacinaban en insulae, edificios de apartamentos propensos a incendios. Los ciudadanos disfrutaban de espectáculos en el Coliseo, donde gladiadores luchaban a muerte, y en el Circo Máximo, con carreras de carros que emocionaban a miles. El pan y circo mantenían al pueblo contento, pero las desigualdades sociales persistían.
+
+--- CHUNK SPLIT FOR POLLY ---
+Los romanos fueron maestros de la ingeniería. Construyeron acueductos que llevaban agua a las ciudades, como el Acueducto de Lisboa, aún visible hoy. Sus carreteras, como la Vía Apia, conectaban el Imperio, facilitando el comercio y los movimientos militares. El Panteón, con su cúpula de hormigón, es un testimonio de su genio arquitectónico. Estas obras no solo eran funcionales, sino también símbolos del poder romano.
+
+La religión romana era politeísta, con dioses como Júpiter, Marte y Venus. Con el tiempo, cultos extranjeros, como el de Isis o Mitra, ganaron popularidad. En el siglo IV, el emperador Constantino abrazó el cristianismo, cambiando el rumbo de la historia. En el año 380, el cristianismo se convirtió en la religión oficial del Imperio, transformando la cultura romana para siempre.
+
+--- CHUNK SPLIT FOR POLLY ---
+Pero el Imperio no era invencible. En el siglo III, las crisis económicas, las invasiones bárbaras y la corrupción debilitaron a Roma. En el año 285, el emperador Diocleciano dividió el Imperio en dos partes, Oriente y Occidente, para hacerlo más manejable. Sin embargo, las presiones continuaron. En el año 410, los visigodos saquearon Roma, un evento que conmocionó al mundo. Finalmente, en el año 476, el último emperador de Occidente, Rómulo Augústulo, fue depuesto por el bárbaro Odoacro, marcando el fin del Imperio Romano de Occidente.
+
+El Imperio de Oriente, conocido como Bizantino, sobrevivió mil años más, preservando el legado romano. En Occidente, la caída de Roma dio paso a la Edad Media, pero su influencia nunca desapareció. Las leyes romanas inspiraron los códigos modernos, su idioma, el latín, dio origen a las lenguas romances, y sus monumentos aún nos maravillan.
+
+--- CHUNK SPLIT FOR POLLY ---
+Narrador: La Antigua Roma no fue solo una civilización; fue una idea. Su historia nos enseña sobre el poder, la ambición y la fragilidad de los imperios. Desde las colinas del Tíber hasta los confines del mundo conocido, Roma moldeó nuestra historia. Gracias por acompañarnos en este viaje al pasado. Hasta la próxima.
+
+[Silencio de 3 segundos para el cierre]

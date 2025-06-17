@@ -1,0 +1,25 @@
+
+--- CHUNK SPLIT FOR POLLY ---
+Narrador: ¡Bienvenidos a un fascinante recorrido por la historia de la Unión Soviética! Nacida de una revolución y marcada por el poder, la lucha y la transformación, esta superpotencia moldeó el siglo XX. Todo comenzó en 1917, en el Imperio Ruso, devastado por la Primera Guerra Mundial. El descontento popular estalló en la Revolución de Febrero, derrocando al zar Nicolás II. Pero el gobierno provisional no satisfizo al pueblo, y los bolcheviques, liderados por Vladimir Lenin, tomaron el poder en la Revolución de Octubre. Prometieron paz, tierra y pan.
+
+En 1918, la Guerra Civil Rusa enfrentó a los bolcheviques, o "Rojos", contra los "Blancos", apoyados por potencias extranjeras. Tras una brutal lucha, los Rojos vencieron, consolidando el control bolchevique. En 1922, Rusia, Ucrania, Bielorrusia y Transcaucasia se unieron para formar la Unión de Repúblicas Socialistas Soviéticas, la URSS, bajo un sistema comunista que abolió la propiedad privada.
+
+--- CHUNK SPLIT FOR POLLY ---
+La muerte de Lenin en 1924 desató una lucha por el poder. Iósif Stalin emergió victorioso, eliminando a rivales como León Trotsky. Stalin transformó la URSS con planes quinquenales, industrializando el país a un costo humano enorme. La colectivización forzada de la agricultura provocó hambrunas, como el Holodomor en Ucrania, que mató a millones. Las purgas de los años 30 eliminaron a opositores reales e imaginarios, consolidando el control totalitario de Stalin.
+
+En la Segunda Guerra Mundial, la URSS jugó un papel crucial. Tras un pacto inicial con la Alemania nazi, Hitler invadió la URSS en 1941. Batallas épicas, como Stalingrado, marcaron un punto de inflexión. La URSS, aliada con los occidentales, derrotó a los nazis en 1945, pero a un costo de más de 20 millones de vidas. La victoria elevó a la URSS a superpotencia, enfrentándola a Estados Unidos en la Guerra Fría.
+
+--- CHUNK SPLIT FOR POLLY ---
+La Guerra Fría fue una lucha ideológica y militar sin enfrentamiento directo. La URSS desarrolló armas nucleares, compitiendo con EE. UU. en la carrera armamentística y espacial. En 1957, el Sputnik, el primer satélite, mostró el avance soviético. Pero la represión interna continuó. Tras la muerte de Stalin en 1953, Nikita Jrushchov denunció sus excesos, iniciando una "desestalinización". Sin embargo, la URSS aplastó revueltas en Hungría (1956) y Checoslovaquia (1968), mostrando su control sobre el Bloque del Este.
+
+En los años 70, bajo Leonid Brézhnev, la URSS alcanzó estabilidad, pero la economía se estancó. La corrupción y la burocracia crecieron, mientras la carrera armamentística drenaba recursos. En 1979, la invasión de Afganistán marcó el inicio de un conflicto costoso y desgastante, debilitando aún más a la URSS.
+
+--- CHUNK SPLIT FOR POLLY ---
+En 1985, Mijaíl Gorbachov asumió el poder con un plan de reformas: la perestroika, para reestructurar la economía, y la glásnost, para abrir la sociedad. Pero estas medidas desataron fuerzas incontrolables. Las repúblicas soviéticas exigieron autonomía, y las tensiones nacionalistas crecieron. La economía colapsó, con escasez de bienes y largas colas para alimentos. En 1989, el Muro de Berlín cayó, y los países del Bloque del Este se independizaron.
+
+En 1991, un intento de golpe de Estado contra Gorbachov fracasó, pero debilitó su autoridad. Las repúblicas, lideradas por Rusia bajo Boris Yeltsin, declararon su independencia. El 25 de diciembre de 1991, la URSS se disolvió oficialmente, y la bandera roja fue arriada en el Kremlin. Nacieron 15 naciones independientes, con Rusia como sucesora principal.
+
+--- CHUNK SPLIT FOR POLLY ---
+El legado de la URSS es complejo. Fue una potencia que desafió al capitalismo, logró avances científicos y derrotó al nazismo, pero a un costo humano devastador. Su colapso marcó el fin de la Guerra Fría, pero dejó desafíos en las exrepúblicas, desde conflictos étnicos hasta desigualdades económicas. Hoy, la historia de la Unión Soviética nos recuerda el poder de las ideas, los peligros del totalitarismo y la fragilidad de los imperios. Gracias por acompañarnos en este viaje al pasado.
+
+[Silencio de 3 segundos para el cierre]

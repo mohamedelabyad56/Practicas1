@@ -1,20 +1,35 @@
-# Archivos sensibles y de configuración
-.env
-config.json
-client_secret.json
-
-# Archivos y carpetas de salida
-output/
-projects/
-
-# Entorno virtual
-venv/
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.Python
+venv/
+*.egg-info/
+*.egg
 
-# Archivos temporales de MoviePy o descargas
+# Entorno
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Salida
+output/
 *.mp3
 *.mp4
 *.jpg
-*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

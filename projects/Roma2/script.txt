@@ -1,0 +1,11 @@
+--- CHUNK SPLIT FOR POLLY ---
+Narrador: ¡Bienvenidos a un viaje relámpago por la Antigua Roma! Hace más de dos mil años, un pequeño pueblo junto al río Tíber se convirtió en un imperio que cambió el mundo. Según la leyenda, Roma fue fundada en el 753 antes de Cristo por Rómulo, criado por una loba. Desde sus siete colinas, Roma creció, primero como monarquía, luego como república en el 509 antes de Cristo, gobernada por el Senado.
+
+La expansión romana fue imparable. Las guerras púnicas contra Cartago dieron a Roma el control del Mediterráneo. Pero el poder trajo conflictos. Julio César conquistó la Galia, pero su ambición desató una guerra civil. Asesinado en el 44 antes de Cristo, dejó paso a su heredero, Octavio, quien como Augusto inauguró el Imperio en el 27 antes de Cristo.
+
+--- CHUNK SPLIT FOR POLLY ---
+Bajo Augusto, la Pax Romana trajo dos siglos de paz. El Imperio abarcaba desde Britania hasta Egipto. Las ciudades brillaban con el Coliseo, acueductos y carreteras como la Vía Apia. Los romanos construyeron maravillas como el Panteón, aún en pie. Pero la vida era dura para los pobres, mientras los ricos disfrutaban de gladiadores y carreras de carros.
+
+En el siglo IV, Constantino abrazó el cristianismo, transformando Roma. Sin embargo, las invasiones bárbaras y la corrupción debilitaron el Imperio. En el 476, el último emperador de Occidente cayó, marcando el fin de Roma. Su legado vive en nuestras leyes, idiomas y monumentos. Gracias por viajar con nosotros al corazón de la historia.
+
+[Silencio de 2 segundos para el cierre]

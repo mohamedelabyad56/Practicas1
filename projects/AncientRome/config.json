@@ -1,0 +1,20 @@
+{
+
+    "AWS_ACCESS_KEY_ID": "AKIAXV4NFPV3IYOIPUVF",
+    "AWS_SECRET_ACCESS_KEY": "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",
+    "AWS_REGION_NAME": "us-east-1",
+
+    "VOICE_PROVIDER": "polly",
+    "POLLY_VOICE_ID": "Lucia",
+
+    "IMAGE_SOURCE": "titan",
+    "TITAN_MODEL_ID": "amazon.titan-image-generator-v1",
+
+    "NUM_IMAGES": 30,
+    "YOUTUBE_TITLE": "La Antigua Roma: El Ascenso y Caída de un Imperio",
+    "YOUTUBE_DESCRIPTION": "Descubre la fascinante historia de la Antigua Roma, desde su fundación mítica hasta su caída, pasando por la República, el Imperio, sus logros en ingeniería y el impacto del cristianismo, narrado con imágenes de stock.",
+    "YOUTUBE_TAGS": ["aws", "polly", "titan", "ia", "python"],
+    "YOUTUBE_CATEGORY": "28",
+    "YOUTUBE_PRIVACY": "private"
+}
+

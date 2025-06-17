@@ -1,0 +1,20 @@
+{
+
+    "AWS_ACCESS_KEY_ID": "AKIAXV4NFPV3IYOIPUVF",
+    "AWS_SECRET_ACCESS_KEY": "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",
+    "AWS_REGION_NAME": "us-east-1",
+
+    "VOICE_PROVIDER": "polly",
+    "POLLY_VOICE_ID": "Lucia",
+
+    "IMAGE_SOURCE": "titan",
+    "TITAN_MODEL_ID": "amazon.titan-image-generator-v1",
+
+    "NUM_IMAGES": 30,
+    "YOUTUBE_TITLE": "La Unión Soviética: Ascenso y Caída en 15 Minutos",
+    "YOUTUBE_DESCRIPTION": "Explora la historia de la Unión Soviética, desde la Revolución de 1917 hasta su disolución en 1991, con sus líderes, guerras, reformas y legado, narrado con imágenes generadas por IA",
+    "YOUTUBE_TAGS": ["unión soviética", "historia", "comunismo", "guerra fría", "lenin", "stalin", "gorbachov"],
+    "YOUTUBE_CATEGORY": "28",
+    "YOUTUBE_PRIVACY": "private"
+}
+
