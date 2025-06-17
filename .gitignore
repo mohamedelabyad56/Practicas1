@@ -1,0 +1,20 @@
+# Archivos sensibles y de configuración
+.env
+config.json
+client_secret.json
+
+# Archivos y carpetas de salida
+output/
+projects/
+
+# Entorno virtual
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos temporales de MoviePy o descargas
+*.mp3
+*.mp4
+*.jpg
+*.tmp

@@ -17,6 +17,11 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 import google.auth.exceptions
+from dotenv import load_dotenv
+from io import StringIO
+
+# Cargar variables de entorno desde .env
+load_dotenv()
 
 # CONFIGURACIÓN GLOBAL
 DEFAULT_CONFIG = {
@@ -25,9 +30,11 @@ DEFAULT_CONFIG = {
     "AWS_REGION_NAME": "us-east-1",
     "VOICE_PROVIDER": "polly",
     "POLLY_VOICE_ID": "Lucia",
-    "IMAGE_SOURCE": "pexels",
+    "IMAGE_SOURCE": "flux",
     "HUGGINGFACE_API_KEY": os.getenv("HUGGINGFACE_API_KEY", ""),
-    "PEXELS_API_KEY": os.getenv("PEXELS_API_KEY", "WYgqPYIfZnBRNTEQTBzxKxnil3nzyRTQ9KcQF1bupBaQEshp4sYymvEs"),
+    "PEXELS_API_KEY": os.getenv("PEXELS_API_KEY"),
+    "ELEVENLABS_API_KEY": os.getenv("ELEVENLABS_API_KEY", ""),
+    "GOOGLE_CLIENT_SECRET": os.getenv("GOOGLE_CLIENT_SECRET"),
     "TITAN_MODEL_ID": "amazon.titan-image-generator-v1",
     "NUM_IMAGES": 12,
     "VIDEO_SIZE": (1920, 1080),
@@ -36,7 +43,6 @@ DEFAULT_CONFIG = {
     "VIDEO_BITRATE": "8000k",
     "CRF": "16",
     "ROOT_DIRECTORIES": ["projects", "output"],
-    "YOUTUBE_CLIENT_SECRET_FILE": "client_secret.json",
     "YOUTUBE_SCOPES": ["https://www.googleapis.com/auth/youtube.upload"],
     "YOUTUBE_TITLE": "Video Automatizado",
     "YOUTUBE_DESCRIPTION": "Video generado con Python.",
@@ -163,7 +169,7 @@ def generate_polly_audio(text: str, output_path: Path, config: Dict[str, Any]) -
 
 def generate_audio(text: str, output_path: Path, config: Dict[str, Any]) -> None:
     provider = config.get("VOICE_PROVIDER", "polly")
-    logger.info(f"Usando proveedor de voz: {provider}")
+    logger.info(f"Usando proveedor de voz={provider}")
     if not text.strip():
         raise ValueError("El texto del guion está vacío.")
     if provider == "polly":
@@ -175,7 +181,7 @@ def generate_audio(text: str, output_path: Path, config: Dict[str, Any]) -> None
 
 # --- Funciones de Generación de Imágenes ---
 
-@retry(stop_max_attempt_number=3, wait_exponential_multiplier=1000, wait_exponential_max=10000)
+@retry(stop_max_attempt_number=2, wait_exponential_multiplier=1000, wait_exponential_max=10000)
 def generate_pexels_images(prompts: List[str], output_dir: Path, config: Dict[str, Any]) -> List[Path]:
     logger.info(f"Buscando {len(prompts)} imágenes en Pexels")
     if not config["PEXELS_API_KEY"]:
@@ -196,12 +202,12 @@ def generate_pexels_images(prompts: List[str], output_dir: Path, config: Dict[st
                 image_paths.append(img_path)
                 logger.info(f"Imagen {i+1} de Pexels guardada: {img_path}")
             else:
-                logger.warning(f"No se encontraron imágenes en Pexels para: {prompt}")
+                logger.error(f"No se encontraron imágenes en Pexels para: {prompt}")
         except Exception as e:
             logger.error(f"Fallo en Pexels para prompt {prompt}: {e}")
     return image_paths
 
-@retry(stop_max_attempt_number=3, wait_exponential_multiplier=1000, wait_exponential_max=10000)
+@retry(stop_max_attempt_number=2, wait_exponential_multiplier=50, wait_exponential_max=10000)
 def generate_flux_images(prompts: List[str], output_dir: Path, config: Dict[str, Any]) -> List[Path]:
     logger.info(f"Generando {len(prompts)} imágenes con FLUX.1")
     if not config["HUGGINGFACE_API_KEY"]:
@@ -210,18 +216,18 @@ def generate_flux_images(prompts: List[str], output_dir: Path, config: Dict[str,
     headers = {"Authorization": f"Bearer {config['HUGGINGFACE_API_KEY']}"}
     image_paths = []
     for i, prompt in enumerate(prompts):
-        enhanced_prompt = f"Ultra-realistic {prompt}, 4K resolution, cinematic lighting, intricate details, photorealistic textures, 16:9 aspect ratio"
+        enhanced_prompt = f"Hyper-realistic {prompt}, 4K resolution, cinematic lighting, intricate details, photorealistic textures, 16:9 aspect ratio, dramatic ancient Roman aesthetic"
         payload = {
             "inputs": enhanced_prompt,
             "parameters": {
-                "num_inference_steps": 50,
-                "guidance_scale": 7.5,
+                "num_inference_steps": 25,
+                "guidance_scale": 7.0,
                 "width": 1920,
                 "height": 1080
             }
         }
         try:
-            response = requests.post(api_url, headers=headers, json=payload, timeout=120)
+            response = requests.post(api_url, headers=headers, json=payload, timeout=60)
             response.raise_for_status()
             img_data = response.content
             img_path = output_dir / f"image_{i+1:02d}.jpg"
@@ -229,11 +235,11 @@ def generate_flux_images(prompts: List[str], output_dir: Path, config: Dict[str,
             image_paths.append(img_path)
             logger.info(f"Imagen {i+1} de FLUX.1 guardada: {img_path}")
         except requests.RequestException as e:
-            logger.error(f"Fallo en FLUX.1 para prompt {prompt}: {e}")
+            logger.error(f"Fallo en FLUX.1 para {prompt}: {e}")
             raise
     return image_paths
 
-@retry(stop_max_attempt_number=3, wait_exponential_multiplier=1000, wait_exponential_max=10000)
+@retry(stop_max_attempt_number=2, wait_exponential_multiplier=1000, wait_exponential_max=20000)
 def generate_titan_images(prompts: List[str], output_dir: Path, config: Dict[str, Any]) -> List[Path]:
     logger.info(f"Generando {len(prompts)} imágenes con Amazon Titan")
     if not config["AWS_ACCESS_KEY_ID"] or not config["AWS_SECRET_ACCESS_KEY"]:
@@ -249,7 +255,7 @@ def generate_titan_images(prompts: List[str], output_dir: Path, config: Dict[str
         enhanced_prompt = f"Ultra-realistic photograph of {prompt}, 4K resolution, cinematic lighting, highly detailed, photorealistic textures, 16:9 aspect ratio"
         body = {
             "taskType": "TEXT_IMAGE",
-            "textToImageParams": {"text": enhanced_prompt, "negativeText": "blurry, low quality"},
+            "textToImageParams": {"text": enhanced_prompt},
             "imageGenerationConfig": {
                 "numberOfImages": 1,
                 "quality": "premium",
@@ -268,48 +274,46 @@ def generate_titan_images(prompts: List[str], output_dir: Path, config: Dict[str
             if not response_body.get('images'):
                 raise ValueError("No se generaron imágenes")
             image_base64 = response_body['images'][0]
-            image_data = base64.b64decode(image_base64)
+            img_data = base64.b64decode(image_base64)
             img_path = output_dir / f"image_{i+1:02d}.jpg"
-            img_path.write_bytes(image_data)
+            img_path.write_bytes(img_data)
             image_paths.append(img_path)
             logger.info(f"Imagen {i+1} de Titan guardada: {img_path}")
         except boto3.exceptions.Boto3Error as e:
-            logger.error(f"Fallo en Titan para prompt {prompt}: {e}")
+            logger.error(f"Fallo en Titan para {prompt}: {e}")
             raise
     return image_paths
 
 def generate_images(prompts: List[str], output_dir: Path, config: Dict[str, Any]) -> List[Path]:
-    source = config.get("IMAGE_SOURCE", "pexels")
-    logger.info(f"Fuente de imágenes: {source}")
+    source = config.get("IMAGE_SOURCE", "flux")
+    logger.info(f"Intentando fuente de imágenes: {source}")
     try:
-        if source == "titan":
-            return generate_titan_images(prompts, output_dir, config)
-        elif source == "flux":
+        if source == "flux":
             return generate_flux_images(prompts, output_dir, config)
         elif source == "pexels":
             return generate_pexels_images(prompts, output_dir, config)
+        elif source == "titan":
+            return generate_titan_images(prompts, output_dir, config)
         else:
             raise ValueError(f"Fuente de imágenes no soportada: {source}")
     except Exception as e:
         logger.error(f"Fallo con {source}: {e}")
-        if source != "pexels":
-            logger.info("Usando Pexels como fallback")
-            return generate_pexels_images(prompts, output_dir, config)
-        raise
+        logger.info("Usando Pexels como fallback")
+        return generate_pexels_images(prompts, output_dir, config)
 
 # --- Funciones Auxiliares ---
 
-def setup_directories(project_name: str) -> tuple[Path, Path, Path]:
+def setup_directories(project_name: str) -> tuple[Path, Path, Any]:
     base_dir = Path("output") / project_name
-    audio_dir, images_dir, video_dir = base_dir / "audio", base_dir / "imagenes", base_dir / "video"
+    audio_dir, images_dir, video_dir = base_dir / "audio", base_dir / "images", base_dir / "video"
     for d in [audio_dir, images_dir, video_dir]:
-        d.mkdir(parents=True, exist_ok=True)
+        d.mkdir(exist_ok=True, parents=True)
     return audio_dir, images_dir, video_dir
 
 def extract_prompts(text: str) -> List[str]:
     chunk_marker = "--- CHUNK SPLIT FOR POLLY ---"
-    chunks = text.split(chunk_marker) if chunk_marker in text else [text]
-    stop_words = {"el", "la", "los", "las", "de", "en", "a", "con", "por", "para", "que", "y", "o", "un", "una", "es", "se", "al", "del", "su"}
+    chunks = text.split(chunk_marker) if chunk_marker in text else [text.strip()]
+    stop_words = {"el", "la", "los", "las", "de", "en", "a", "con", "por", "para", "que", "y", "o", "un", "una", "es", "se", "al", "del"}
     prompts = []
     for chunk in chunks:
         words = re.findall(r'\w+', chunk.lower())
@@ -319,18 +323,18 @@ def extract_prompts(text: str) -> List[str]:
             prompt = " ".join(top_keywords)
             prompts.append(prompt)
     default_prompts = [
-        "FIFA World Cup 2006 Germany",
-        "Zidane headbutt Materazzi 2006",
-        "Italy winning penalty shootout 2006",
-        "Storming of Olympiastadion Berlin",
-        "Philipp Lahm goal opening match",
-        "Battle of Nuremberg 2006",
-        "Fabio Grosso goal vs Germany",
-        "France vs Brazil 2006",
-        "Shakira performance World Cup",
-        "Miroslav Klose Golden Boot",
-        "Italian fans celebrating 2006",
-        "Zinedine Zidane red card"
+        "Ancient Rome cityscape",
+        "Romulus and Remus with she-wolf",
+        "Roman Senate chamber",
+        "Julius Caesar statue",
+        "Pax Romana marketplace",
+        "Colosseum gladiator fight",
+        "Roman aqueduct",
+        "Pantheon dome interior",
+        "Constantine Arch",
+        "Visigoths sacking Rome",
+        "Roman roads Via Appia",
+        "Latin manuscripts"
     ]
     while len(prompts) < 12:
         prompts.extend(default_prompts[:12 - len(prompts)])
@@ -402,7 +406,21 @@ def upload_to_youtube(video_path: Path, config: Dict[str, Any]) -> None:
     try:
         if not video_path.exists():
             raise FileNotFoundError(f"Video no encontrado: {video_path}")
-        flow = InstalledAppFlow.from_client_secrets_file(config["YOUTUBE_CLIENT_SECRET_FILE"], config["YOUTUBE_SCOPES"])
+        if not config["GOOGLE_CLIENT_SECRET"]:
+            raise ValueError("GOOGLE_CLIENT_SECRET no está configurado en .env")
+        # Construir client_secret.json en memoria
+        client_config = {
+            "installed": {
+                "client_id": "664767753282-k4hvkq0rbsf8as6a17r83lg2cmpj5k43.apps.googleusercontent.com",
+                "project_id": "video-uploader",
+                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                "token_uri": "https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                "client_secret": config["GOOGLE_CLIENT_SECRET"],
+                "redirect_uris": ["http://localhost"]
+            }
+        }
+        flow = InstalledAppFlow.from_client_config(client_config, config["YOUTUBE_SCOPES"])
         credentials = flow.run_local_server(port=0)
         youtube = build("youtube", "v3", credentials=credentials)
         request_body = {
